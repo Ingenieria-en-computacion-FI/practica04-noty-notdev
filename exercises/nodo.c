@@ -34,15 +34,17 @@ Nodo* crearArregloNodos(int n){
 }
 
 /* Ejercicio 3 */
-Nodo* agregarNodo(Nodo* arr, int n, int _data){
-	Nodo* n_arr = (Nodo*) realloc(arr, sizeof(Nodo) * (n + 1));
+Nodo* agregarNodo(Nodo* arr, int *n, int _data){
+	Nodo* n_arr = (Nodo*) realloc(arr, sizeof(Nodo) * (*n + 1));
 
 	//	Si hay falla en RAM.
 	if(!n_arr) return arr;
 
 	//	Llenando el nuevo nodo del arreglo.
-	(n_arr + n)->data = _data;
-	(n_arr + n)->sig = NULL;
+	(n_arr + *n)->data = _data;
+	(n_arr + *n)->sig = NULL;
+
+	*n += 1;
 
 	return n_arr;
 }

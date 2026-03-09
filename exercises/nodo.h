@@ -22,7 +22,7 @@
 	Nodo* crearArregloNodos(int n);
 
 	/* Ejercicio 3: Agregar un nodo usando realloc */
-	Nodo* agregarNodo(Nodo* arr, int n, int _data);
+	Nodo* agregarNodo(Nodo* arr, int *n, int _data);
 
 	/* Ejercicio 4: Liberar memoria de nodos */
 	void liberarArregloNodos(Nodo* arr);
